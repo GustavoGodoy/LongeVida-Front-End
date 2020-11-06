@@ -23,24 +23,26 @@ background: linear-gradient(86deg, rgba(37,102,112,1) 0%, rgba(30,66,94,1) 100%)
       </ul>
     </div>
 
-    <div class="collapse navbar-collapse d-flex justify-content-flex-end" id="navbarSupportedContent2">
-      <ul class="navbar-nav">
-        <div> 
+  
+    <div class="d-flex justify-content-flex-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ">
+        <div *ngIf='auth.btnLogin()'>
           <li class="nav-item pl-5 pr-3">
-            <a class="nav-link " routerLink='/login'>Login</a>
+           <a class="nav-link " routerLink='/login'>Login</a>
           </li>
         </div>
-        <div> 
+        <div *ngIf='auth.btnLogin()'>
           <li class="nav-item pl-5 pr-3">
             <a class="nav-link " routerLink='/cadastro'>Cadastro</a>
           </li>
-        </div>
+         </div>
 
-        <div> 
+         <div *ngIf='auth.btnSair()'>
           <li class="nav-item pl-5 pr-3">
-            <a class="nav-link ">Sair</a>
+            <a class="nav-link "(click)='sair()' >Sair</a>
           </li>
         </div>
       </ul>
     </div>
-  </nav>
+
+</nav>
