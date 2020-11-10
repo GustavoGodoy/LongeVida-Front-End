@@ -38,92 +38,17 @@
 
             <hr>
         <div class="container">
-            <h2 class="text-right mt-5 mb-3">CATEGORIA 1</h2>
+            <h2 class="text-right mt-5 mb-3">Produtos</h2>
             <div class="card-deck">
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional</p>
-                    
-                </div>
-                </div>
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-                </div>
-                </div>
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional</p>
-                </div>
-            </div>
-        
-        <div class="container">
-            <h2 class=" text-right mt-5 mb-3">CATEGORIA 2</h2>
-            <div class="card-deck">
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional</p>
-                    
-                </div>
-                </div>
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-                </div>
-                </div>
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional</p>
-                </div>
-            </div>
-
-        <div class="container mb-5">
-            <h2 class=" text-right mt-5 mb-3">CATEGORIA 3</h2>
-            <div class="card-deck">
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional</p>
-                    
-                </div>
-                </div>
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-                </div>
-                </div>
-                <div class="card">
-                <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Produto teste</h5>
-                    <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional</p>
+                <div class="card mb-5   " *ngFor="let item of listaProdutos | orderBy: key : reverse">
+                    <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.nameProduto}}</h5>
+                    <p class="card-text">{{item.descricaoProduto}}</p>      
+                    </div>
                 </div>
             </div>
         </div>
-        
-        </div>
-        </div>
-
-        
-        
-
-
-
-
+    </div>
     </div>
 </div>  
