@@ -18,7 +18,31 @@ background: linear-gradient(86deg, rgba(37,102,112,1) 0%, rgba(30,66,94,1) 100%)
         </li> 
         <li class="nav-item pl-2 pr-3">
           <a class="nav-link" routerLink='/contato'>Contato</a>
-        </li> 
+        </li>
+
       </ul>
     </div>
-  </nav>
+
+  
+    <div class="d-flex justify-content-flex-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ">
+        <div *ngIf='auth.btnLogin()'>
+          <li class="nav-item pl-5 pr-3">
+           <a class="nav-link " routerLink='/login'>Login</a>
+          </li>
+        </div>
+        <div *ngIf='auth.btnLogin()'>
+          <li class="nav-item pl-5 pr-3">
+            <a class="nav-link " routerLink='/cadastro'>Cadastro</a>
+          </li>
+         </div>
+
+         <div *ngIf='auth.btnSair()'>
+          <li class="nav-item pl-5 pr-3">
+            <a class="nav-link "(click)='sair()' >Sair</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+</nav>
