@@ -63,7 +63,7 @@
           <div class="container">
             <h2 class="text-right mt-5 mb-3">Produtos</h2>
             <div class="card-deck">
-                <div class="card mb-5   " *ngFor="let item of listaProdutos | orderBy : key : reverse ">
+                <div class="card mb-5   " *ngFor="let item of listaProdutos ">
                     <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
                     <div class="card-body">
                         <h5 class="card-title">{{item.nameProduto}}</h5>

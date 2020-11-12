@@ -16,7 +16,6 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EmpresaComponent } from './empresa/empresa.component';
-import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CrudProdutoComponent } from './crud-produto/crud-produto.component';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { CrudProdutoComponent } from './crud-produto/crud-produto.component';
     LoginComponent,
     CadastroComponent,
     EmpresaComponent,
-    CadastroProdutoComponent,
     CrudProdutoComponent
   ],
   imports: [
