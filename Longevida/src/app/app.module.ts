@@ -17,6 +17,10 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { CrudProdutoComponent } from './crud-produto/crud-produto.component';
+import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
+import { PutProdutoComponent } from './put-produto/put-produto.component';
+import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
+import { DeleteProdutoComponent } from './delete-produto/delete-produto.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { CrudProdutoComponent } from './crud-produto/crud-produto.component';
     LoginComponent,
     CadastroComponent,
     EmpresaComponent,
-    CrudProdutoComponent
+    CrudProdutoComponent,
+    PutCategoriaComponent,
+    PutProdutoComponent,
+    DeleteCategoriaComponent,
+    DeleteProdutoComponent
   ],
   imports: [
     BrowserModule,

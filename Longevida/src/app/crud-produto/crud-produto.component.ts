@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/Categoria';
 import { Produtos } from '../model/Produtos';
+import { UserLogin } from '../model/UserLogin';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutosService } from '../service/produtos.service';
 
@@ -23,10 +24,20 @@ export class CrudProdutoComponent implements OnInit {
   constructor(
     private produtosService: ProdutosService,
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(){
+
+    if(localStorage.getItem('usuario') !== 'adm01'){
+      this.router.navigate(['/login'])
+    localStorage.clear()
+    }
+
+    this.findAllCategoria()
+    this.findAllProdutos()
+
 
   }
   findAllProdutos(){
@@ -45,7 +56,20 @@ export class CrudProdutoComponent implements OnInit {
       this.categoria = resp
     })
   }
-  cadastrar(){
+
+  findAllCategoria(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategoria = resp
+    })
+  }
+
+  cadastrarCategoria(){
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+      alert('Categoria cadastrada com sucesso!')
+    })
+  }
+  cadastrarProdutos(){
     this.categoria.id = this.idCategoria
     this.produtos.categoria = this.categoria
 
