@@ -15,6 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { EmpresaComponent } from './empresa/empresa.component';
+import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
+import { CrudProdutoComponent } from './crud-produto/crud-produto.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     FooterComponent,
     CategoriasComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    EmpresaComponent,
+    CadastroProdutoComponent,
+    CrudProdutoComponent
   ],
   imports: [
     BrowserModule,
