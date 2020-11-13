@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         if(this.userLogin.usuario === 'adm01' && this.userLogin.senha === 'adm123'){
           localStorage.setItem('usuario','adm01')
           window.location.href = "/cadastroAdm"
+          alert('Seja bem-vindo(a) Adm')
        }
        else{
         localStorage.setItem('usuario',this.userLogin.usuario)

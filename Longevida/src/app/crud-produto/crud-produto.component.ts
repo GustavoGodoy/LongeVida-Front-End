@@ -29,6 +29,7 @@ export class CrudProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
 
     if(localStorage.getItem('usuario') !== 'adm01'){
       this.router.navigate(['/login'])

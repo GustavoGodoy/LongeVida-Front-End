@@ -33,7 +33,7 @@ export class PutCategoriaComponent implements OnInit {
   salvar(){
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) =>{
       this.categoria = resp
-      this.router.navigate(['/c4d4str0'])
+      this.router.navigate(['/cadastroAdm'])
       alert('Categoria atualizada com sucesso!')
     })
   }

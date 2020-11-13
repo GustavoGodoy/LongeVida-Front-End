@@ -32,7 +32,7 @@ export class DeleteCategoriaComponent implements OnInit {
 
   btnSim() {
     this.categoriaService.deleteCategoria(this.categoria.id).subscribe(() => {
-      this.router.navigate(['/c4d4str0'])
+      this.router.navigate(['/cadastroAdm'])
       alert('Tema apagado com sucesso!')
     })
   
@@ -40,7 +40,7 @@ export class DeleteCategoriaComponent implements OnInit {
 }
 
 btnNao() {
-  this.router.navigate(['/c4d4str0'])
+  this.router.navigate(['/cadastroAdm'])
 }
 
 }
