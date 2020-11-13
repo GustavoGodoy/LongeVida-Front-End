@@ -56,7 +56,7 @@ export class PutProdutoComponent implements OnInit {
   salvar(){
     this.produtoService.putProdutos(this.produtos).subscribe((resp: Produtos) => {
       this.produtos = resp
-      this.router.navigate(['/c4d4str0'])
+      this.router.navigate(['/cadastroAdm'])
       alert('Produto alterado com sucesso!')
     })
   }

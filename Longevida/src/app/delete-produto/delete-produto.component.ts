@@ -32,13 +32,13 @@ export class DeleteProdutoComponent implements OnInit {
   }
   btnSim(){
     this.produtosService.deleteProdutos(this.produtos.id).subscribe(() => {
-      this.router.navigate(['/c4d4str0'])
+      this.router.navigate(['/cadastroAdm'])
       alert('Produto apagada com sucesso!')
     })
   }
 
   btnNao(){
-    this.router.navigate(['/c4d4str0'])
+    this.router.navigate(['/cadastroAdm'])
   }
 
 }
