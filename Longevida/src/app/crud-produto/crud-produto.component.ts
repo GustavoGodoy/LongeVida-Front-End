@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/Categoria';
 import { Produtos } from '../model/Produtos';
 import { UserLogin } from '../model/UserLogin';
+import { AlertService } from '../service/alert.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutosService } from '../service/produtos.service';
 
@@ -25,7 +26,8 @@ export class CrudProdutoComponent implements OnInit {
     private produtosService: ProdutosService,
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertService
   ) { }
 
   ngOnInit(){
@@ -67,7 +69,7 @@ export class CrudProdutoComponent implements OnInit {
   cadastrarCategoria(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp
-      alert('Categoria cadastrada com sucesso!')
+      this.alert.showAlertSuccess('Categoria cadastrada com sucesso!')
     })
   }
   cadastrarProdutos(){
@@ -77,7 +79,7 @@ export class CrudProdutoComponent implements OnInit {
     this.produtosService.postProdutos(this.produtos).subscribe((resp: Produtos) =>{
       this.produtos = resp
       this.produtos = new Produtos()
-      alert('Produtos cadastrado com sucesso!')
+      this.alert.showAlertSuccess('Produtos cadastrado com sucesso!')
       this.findAllProdutos()
     })
   }

@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { OrderModule } from 'ngx-order-pipe';
 import { CommonModule } from '@angular/common';
+import {ModalModule} from 'ngx-bootstrap/modal'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 import { PutProdutoComponent } from './put-produto/put-produto.component';
 import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 import { DeleteProdutoComponent } from './delete-produto/delete-produto.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { DeleteProdutoComponent } from './delete-produto/delete-produto.componen
     PutCategoriaComponent,
     PutProdutoComponent,
     DeleteCategoriaComponent,
-    DeleteProdutoComponent
+    DeleteProdutoComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { DeleteProdutoComponent } from './delete-produto/delete-produto.componen
     HttpClientModule,
     FormsModule,
     OrderModule,
-    CommonModule
+    CommonModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

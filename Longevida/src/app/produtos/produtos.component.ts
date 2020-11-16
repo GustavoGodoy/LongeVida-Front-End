@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produtos } from '../model/Produtos';
+import { AlertService } from '../service/alert.service';
 import { ProdutosService } from '../service/produtos.service';
 
 @Component({
@@ -17,7 +18,9 @@ export class ProdutosComponent implements OnInit {
   idProduto: number
 
   constructor(
-    private produtosService: ProdutosService) { }
+    private produtosService: ProdutosService,
+    private alert: AlertService
+    ) { }
 
   ngOnInit(){
     window.scroll(0,0)
@@ -34,6 +37,10 @@ export class ProdutosComponent implements OnInit {
     this.produtosService.getByIdProduto(this.idProduto).subscribe((resp: Produtos) =>{
       this.produto = resp
     })
+  }
+
+  venda(){
+    this.alert.showAlertSuccess('Item adicionado ao carrinho')
   }
   
 }

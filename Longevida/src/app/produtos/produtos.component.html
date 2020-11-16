@@ -21,13 +21,13 @@
                 </ol>
                 <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://images.unsplash.com/photo-1571765402741-3a9bfb51a22f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Primeiro Slide">
+                    <img class="d-block w-100" src="../../assets/img/slide1_produtos.png" alt="Primeiro Slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images.unsplash.com/photo-1604079993896-82084928a2e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" alt="Segundo Slide">
+                    <img class="d-block w-100" src="../../assets/img/slide2_produtos.png" alt="Segundo Slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images.unsplash.com/photo-1604053675241-4b0a961e77e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Terceiro Slide">
+                    <img class="d-block w-100" src="../../assets/img/slide3_produtos.png" alt="Terceiro Slide">
                 </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -39,20 +39,49 @@
                 <span class="sr-only">Próximo</span>
                 </a>
             </div>
-
+        </div> 
             <hr>
-        <div class="container">
+        <div class="container mb-3">
+           
             <h2 class="text-right mt-5 mb-3">Produtos</h2>
-            <div class="card-deck">
-                <div class="card mb-5   " *ngFor="let item of listaProdutos | orderBy: key : reverse">
-                    <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{item.nameProduto}}</h5>
-                    <p class="card-text">{{item.descricaoProduto}}</p>      
+            <form class="form-inline my-2 my-lg-0 d-flex justify-content-end mb-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-outline my-2 my-sm-0" type="submit">Pesquisar</button>
+              </form>
+        </div>      
+        <div class=" container ">
+              <div class="row d-flex justify-content-between align-items-center ">
+                <div class="col-md-4 mt-3" *ngFor="let item of listaProdutos | orderBy: key : reverse">
+                    <div class="card mb-5   " style="width: 14rem; height: 26rem;" >
+                        <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <div >
+                                <p class="card-text font-weight-bold mb-3  ">{{item.nameProduto}}</p>
+                               
+                            </div>
+                            <div class="mb-1">
+                                <p class="card-text " style="font-size: 12px;">{{item.descricaoProduto}}</p>
+                            </div>
+                            
+                            <div class="mb-2">
+                                <p class="card-text font-weight-bold">R$ {{item.precoProduto}}</p>        
+                            </div>
+                        
+                        
+                      
+                       
+                        
+                            <div class="d-flex justify-content-center align-items-end">
+                            <a  class="btn btn-outline mb-4  " (click)='venda()'> <img width="40px" height="25px" src="../../assets/img/carrinho-de-compras.svg" alt="...">Comprar</a>
+                           
+                          </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+              </div>
+            
+           
         </div>
-    </div>
+    
     </div>
 </div>  

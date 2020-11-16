@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLogin } from '../model/UserLogin';
+import { AlertService } from '../service/alert.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService:  AuthService,
-    private router: Router
+    private router: Router,
+    private alert: AlertService
   ) { }
 
   ngOnInit() {
@@ -30,13 +32,13 @@ export class LoginComponent implements OnInit {
         if(this.userLogin.usuario === 'adm01' && this.userLogin.senha === 'adm123'){
           localStorage.setItem('usuario','adm01')
           window.location.href = "/cadastroAdm"
-          alert('Seja bem-vindo(a) Adm')
+          this.alert.showAlertInfo('Seja bem-vindo(a) Administrador')
        }
        else{
         localStorage.setItem('usuario',this.userLogin.usuario)
        
         this.router.navigate(['/produtos'])
-        alert('Seja bem-vindo(a)')
+        this.alert.showAlertInfo('Seja bem-vindo(a)')
        }
       })
       

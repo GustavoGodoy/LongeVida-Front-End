@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from '../model/Categoria';
+import { AlertService } from '../service/alert.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -16,7 +17,10 @@ export class CategoriasComponent implements OnInit {
   listaCategoria: Categoria[] 
   idCategoria: number
 
-  constructor(private categoriaService: CategoriaService) { }
+  constructor(
+    private categoriaService: CategoriaService
+  
+    ) { }
 
   ngOnInit(){
     window.scroll(0,0)
