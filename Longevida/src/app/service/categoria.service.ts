@@ -20,6 +20,10 @@ export class CategoriaService {
   getByIdCategoria(id: number){
     return this.http.get(`http://localhost:8080/categorias/${id}`, this.token)
   }
+
+  getByNameCategoria(nome: string){
+    return this.http.get(`http://localhost:8080/categorias/categoria/${nome}`, this.token)
+  }
   postCategoria(categoria: Categoria){
     return this.http.post('http://localhost:8080/categorias', categoria, this.token)
   }

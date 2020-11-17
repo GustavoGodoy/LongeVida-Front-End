@@ -3,13 +3,9 @@
 
 <div class="container w-100">
 
-    <div class="row">
+    <div class="row w-100">
   
-        <div class="col-md-4">
-            <app-categorias></app-categorias>
-        </div>
-
-        <div class="col-md-8">
+        <div class="col-md-12">
            
         <hr>
 
@@ -42,46 +38,109 @@
         </div> 
             <hr>
         <div class="container mb-3">
+           <div class="row w-100">
+               <div class="col-md-6">
+                <h2 class="text-left mt-5 mb-3">Produtos</h2>
+                <form class="form-inline my-2 my-lg-0 d-flex justify-content-start mb-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="nomeProduto" [(ngModel)]="nomeProduto">
+                    <button class="btn btn-outline my-2 my-sm-0" type="submit" (click)='getProdutoByName()'>Pesquisar</button>
+                  </form>
+               </div>
+               <div class="col-md-6">
+            
+               </div>
+           </div>
            
-            <h2 class="text-right mt-5 mb-3">Produtos</h2>
-            <form class="form-inline my-2 my-lg-0 d-flex justify-content-end mb-3">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                <button class="btn btn-outline my-2 my-sm-0" type="submit">Pesquisar</button>
-              </form>
+            
         </div>      
-        <div class=" container ">
+        <div class=" container d-flex justify-content-center align-items-center ">
               <div class="row d-flex justify-content-between align-items-center ">
                 <div class="col-md-4 mt-3" *ngFor="let item of listaProdutos | orderBy: key : reverse">
-                    <div class="card mb-5   " style="width: 14rem; height: 26rem;" >
+                    <div class="card mb-5" style="width: 20rem;" >
                         <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
                         <div class="card-body">
                             <div >
-                                <p class="card-text font-weight-bold mb-3  ">{{item.nameProduto}}</p>
-                               
+                                <p class="card-text font-weight-bold mb-1">{{item.nameProduto}}</p>     
                             </div>
-                            <div class="mb-1">
+                            <div class="mb-3">
                                 <p class="card-text " style="font-size: 12px;">{{item.descricaoProduto}}</p>
                             </div>
-                            
                             <div class="mb-2">
                                 <p class="card-text font-weight-bold">R$ {{item.precoProduto}}</p>        
                             </div>
-                        
-                        
-                      
-                       
-                        
                             <div class="d-flex justify-content-center align-items-end">
-                            <a  class="btn btn-outline mb-4  " (click)='venda()'> <img width="40px" height="25px" src="../../assets/img/carrinho-de-compras.svg" alt="...">Comprar</a>
-                           
+                            <a  class="btn btn-outline mt-2 " (click)='venda()'> <img width="40px" height="25px" src="../../assets/img/carrinho-de-compras.svg" alt="...">Comprar</a> 
                           </div>
                         </div>
                     </div>
                 </div>
               </div>
-            
-           
         </div>
+
+        <hr>
+
+       
+        
+        <div class="container d-flex justify-content-start flex-column mb-5">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  
+
+                <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                  <ul class="navbar-nav mr-auto ">
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgba(30,66,94,1);" >
+                        Consulte nossas categorias!
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                        <div *ngFor='let item of listaCategoria | orderBy: key : reverse'>
+                        <p class="dropdown-item">{{item.categoria}}</p>
+                        </div>
+                        <div class="dropdown-divider"></div>
+
+                      </div>
+                    </li>
+                    
+                  </ul>
+                  
+                </div>
+              </nav>    
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-end flex-column">
+                    <h2 class="text-right mt-5 mb-3">Categoria</h2>
+                    <form class="form-inline my-2 my-lg-0 d-flex justify-content-end mb-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="nomeCategoria" [(ngModel)]="nomeCategoria">
+                    <button class="btn btn-outline my-2 my-sm-0" type="submit" (click)='getProdutoByCategoria()'>Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="row w-100 d-flex justify-content-center align-items-center">
+              <div class="w-100 d-flex flex-row justify-content-between" *ngFor="let item of listaProdutosCat | orderBy: key : reverse">
+                  <div class="col-md-4 mt-3" *ngFor='let prod of item.produtos'>
+                  <div class="card mb-5" style="width: 20rem;" >
+                      <img class="card-img-top" src="../../assets/img/card1.jpg" alt="Imagem de capa do card">
+                      <div class="card-body">
+                          <div >
+                              <p class="card-text font-weight-bold mb-1">{{prod.nameProduto}}</p>     
+                          </div>
+                          <div class="mb-3">
+                              <p class="card-text " style="font-size: 12px;">{{prod.descricaoProduto}}</p>
+                          </div>
+                          <div class="mb-2">
+                              <p class="card-text font-weight-bold">R$ {{prod.precoProduto}}</p>        
+                          </div>
+                          <div class="d-flex justify-content-center align-items-end">
+                          <a  class="btn btn-outline mt-2 " (click)='venda()'> <img width="40px" height="25px" src="../../assets/img/carrinho-de-compras.svg" alt="...">Comprar</a> 
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+    </div>
     
     </div>
 </div>  

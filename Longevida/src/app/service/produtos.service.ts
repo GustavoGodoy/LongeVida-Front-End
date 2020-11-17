@@ -22,6 +22,10 @@ export class ProdutosService {
     return this.http.get(`http://localhost:8080/produtos/${id}`, this.token)
   }
 
+  getProdutoByName(nome: string){
+    return this.http.get(`http://localhost:8080/produtos/produto/${nome}`, this.token)
+  }
+
   postProdutos(produtos: Produtos){
     return this.http.post('http://localhost:8080/produtos',produtos, this.token)
   }
