@@ -2,7 +2,7 @@
 
 .nome{
     font-family: 'Oswald', sans-serif;
-    font-size: x-large;
+    color: #256670;
 }
 
 .tech{
@@ -28,7 +28,7 @@
 
 .time{
     font-family: 'Oswald', sans-serif;
-    font-size: 10vh;
+    font-size: 7vh;
     color: #256670;
     background: rgb(24,58,85);
     background: linear-gradient(86deg, rgba(24,58,85,1) 0%, rgba(37,102,112,1) 100%);

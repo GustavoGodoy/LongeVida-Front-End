@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 .sombra{
     -webkit-box-shadow: 18px 15px 46px -22px rgba(0,0,0,0.75);
@@ -31,3 +32,19 @@ margin-bottom: 10%;
   .show > .btn-outline.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem  rgba(142, 174, 179, 0.877);
   }
+
+
+
+.nome{
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+
+    color: rgb(37, 107, 119);
+}
+
+.text{
+    font-family: 'Oswald', sans-serif;
+    color: rgb(37, 107, 119);
+    font-size: 20px;
+}
+
