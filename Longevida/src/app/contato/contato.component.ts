@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from '../service/alert.service';
 
 @Component({
   selector: 'app-contato',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alert: AlertService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    window.scroll(0,0)
   }
 
+  enviar(){
+    this.alert.showAlertInfo('Item adicionado ao carrinho')
+  }
 }

@@ -15,25 +15,25 @@ export class ProdutosService {
   }
 
   getAllProdutos(){
-    return this.http.get('http://localhost:8080/produtos', this.token)
+    return this.http.get('https://longevida.herokuapp.com/produtos', this.token)
   }
 
   getByIdProduto(id: number){
-    return this.http.get(`http://localhost:8080/produtos/${id}`, this.token)
+    return this.http.get(`https://longevida.herokuapp.com/produtos/${id}`, this.token)
   }
 
   getProdutoByName(nome: string){
-    return this.http.get(`http://localhost:8080/produtos/produto/${nome}`, this.token)
+    return this.http.get(`https://longevida.herokuapp.com/produtos/produto/${nome}`, this.token)
   }
 
   postProdutos(produtos: Produtos){
-    return this.http.post('http://localhost:8080/produtos',produtos, this.token)
+    return this.http.post('https://longevida.herokuapp.com/produtos',produtos, this.token)
   }
   putProdutos(produtos: Produtos){
-    return this.http.put(`http://localhost:8080/produtos/${produtos.id}`, produtos, this.token)
+    return this.http.put(`https://longevida.herokuapp.com/produtos/${produtos.id}`, produtos, this.token)
   }
 
   deleteProdutos(id: number){
-    return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token)
+    return this.http.delete(`https://longevida.herokuapp.com/produtos/${id}`, this.token)
   }
 }

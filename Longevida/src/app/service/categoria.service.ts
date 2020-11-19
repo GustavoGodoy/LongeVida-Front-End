@@ -14,24 +14,24 @@ export class CategoriaService {
   }
 
   getAllCategoria(){
-    return this.http.get('http://localhost:8080/categorias', this.token)
+    return this.http.get('https://longevida.herokuapp.com/categorias', this.token)
   }
 
   getByIdCategoria(id: number){
-    return this.http.get(`http://localhost:8080/categorias/${id}`, this.token)
+    return this.http.get(`https://longevida.herokuapp.com/categorias/${id}`, this.token)
   }
 
   getByNameCategoria(nome: string){
-    return this.http.get(`http://localhost:8080/categorias/categoria/${nome}`, this.token)
+    return this.http.get(`https://longevida.herokuapp.com/categorias/categoria/${nome}`, this.token)
   }
   postCategoria(categoria: Categoria){
-    return this.http.post('http://localhost:8080/categorias', categoria, this.token)
+    return this.http.post('https://longevida.herokuapp.com/categorias', categoria, this.token)
   }
   putCategoria(categoria: Categoria){
-    return this.http.put(`http://localhost:8080/categorias/${categoria.id}`, categoria, this.token)
+    return this.http.put(`https://longevida.herokuapp.com/categorias/${categoria.id}`, categoria, this.token)
   }
   deleteCategoria(id: number){
-    return this.http.delete(`http://localhost:8080/categorias/${id}`, this.token)
+    return this.http.delete(`https://longevida.herokuapp.com/categorias/${id}`, this.token)
   }
 
 }
